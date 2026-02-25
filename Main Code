@@ -1,1 +1,32 @@
+import random
+print("Enter the names of each student individually")
+//Groups
+g1 = []
+g2 = []
+g3 = []
+g4 = []
+g5 = []
+g6 = []
 
+nameList = ['Caleb', 'Charles', 'Chad', 'Chip', 'Barry', 'Ben', 'Bart', 'Harry', 'Henry', 'Hugh', 'James', 'Jerry', 'Tom', 'Ted', 'Terry', 'Kenny', 'Karp', 'Wesley', 'Christopher', 'Shaggy']
+
+groupNumber = 1
+
+randomPick = []
+
+while len(nameList)> 0:
+    randomPick = random.choice(nameList)
+    if tableNumber == 1:
+        g1.append(randomPick)
+    if tableNumber == 2:
+        g2.append(randomPick)
+    if tableNumber == 3:
+        g3.append(randomPick)
+    if tableNumber == 4:
+        g4.append(randomPick)
+    if tableNumber == 5:
+        g5.append(randomPick)
+    if tableNumber == 6:
+        g6.append(randomPick)
+    classList.remove(randomPick)
+    tableNumber = tableNumber + 1
