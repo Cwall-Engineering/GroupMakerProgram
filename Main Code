@@ -1,5 +1,5 @@
 import random
-print("Enter the names of each student individually")
+desiredGroups = input("How many people do you want in each group? ")
 'Groups'
 g1 = []
 g2 = []
@@ -7,6 +7,10 @@ g3 = []
 g4 = []
 g5 = []
 g6 = []
+g7 = []
+g8 = []
+g9 = []
+g10 = []
 
 nameList = ['Caleb', 'Charles', 'Chad', 'Chip', 'Barry', 'Ben', 'Bart', 'Harry', 'Henry', 'Hugh', 'James', 'Jerry', 'Tom', 'Ted', 'Terry', 'Kenny', 'Karp', 'Wesley', 'Christopher', 'Shaggy']
 
@@ -16,26 +20,88 @@ randomPick = []
 
 while len(nameList)> 0:
     randomPick = random.choice(nameList)
-    if tableNumber == 1:
-        g1.append(randomPick)
-    if tableNumber == 2:
-        g2.append(randomPick)
-    if tableNumber == 3:
-        g3.append(randomPick)
-    if tableNumber == 4:
-        g4.append(randomPick)
-    if tableNumber == 5:
-        g5.append(randomPick)
-    if tableNumber == 6:
-        g6.append(randomPick)
-    nameList.remove(randomPick)
-    tableNumber = tableNumber + 1
-    if tableNumber == 7:
-        tableNumber = 1
+    if desiredGroups == 2:
+        if groupNumber == 1:
+            g1.append(randomPick)
+        if groupNumber == 2:
+            g2.append(randomPick)
+        if groupNumber == 3:
+            g3.append(randomPick)
+        if groupNumber == 4:
+            g4.append(randomPick)
+        if groupNumber == 5:
+            g5.append(randomPick)
+        if groupNumber == 6:
+            g6.append(randomPick)
+        if groupNumber == 7:
+            g7.append(randomPick)
+        if groupNumber == 8:
+            g8.append(randomPick)
+        if groupNumber == 9:
+            g9.append(randomPick)
+        if groupNumber == 10:
+            g10.append(randomPick)
+        nameList.remove(randomPick)
+        groupNumber = groupNumber + 1
+        if groupNumber == 11:
+            groupNumber = 1
 
-print("Group 1: ", g1)
-print("Group 2: ", g2)
-print("Group 3: ", g3)
-print("Group 4: ", g4)
-print("Group 5: ", g5)
-print("Group 6: ", g6)
+    if desiredGroups == 3:
+        if groupNumber == 1:
+            g1.append(randomPick)
+        if groupNumber == 2:
+            g2.append(randomPick)
+        if groupNumber == 3:
+            g3.append(randomPick)
+        if groupNumber == 4:
+            g4.append(randomPick)
+        if groupNumber == 5:
+            g5.append(randomPick)
+        if groupNumber == 6:
+            g6.append(randomPick)
+        nameList.remove(randomPick)
+        groupNumber = groupNumber + 1
+        if groupNumber == 7:
+            groupNumber = 1
+    
+    if desiredGroups == 4:
+        if groupNumber == 1:
+            g1.append(randomPick)
+        if groupNumber == 2:
+            g2.append(randomPick)
+        if groupNumber == 3:
+            g3.append(randomPick)
+        if groupNumber == 4:
+            g4.append(randomPick)
+        if groupNumber == 5:
+            g5.append(randomPick)
+        nameList.remove(randomPick)
+        groupNumber = groupNumber + 1
+        if groupNumber == 6:
+            groupNumber = 1
+if desiredGroups == 2:
+    print("Group 1: ", g1)
+    print("Group 2: ", g2)
+    print("Group 3: ", g3)
+    print("Group 4: ", g4)
+    print("Group 5: ", g5)
+    print("Group 6: ", g6)
+    print("Group 7: ", g7)
+    print("Group 8: ", g8)
+    print("Group 9: ", g9)
+    print("Group 10: ", g10)
+
+if desiredGroups == 3:
+    print("Group 1: ", g1)
+    print("Group 2: ", g2)
+    print("Group 3: ", g3)
+    print("Group 4: ", g4)
+    print("Group 5: ", g5)
+    print("Group 6: ", g6)
+
+if desiredGroups == 4:
+    print("Group 1: ", g1)
+    print("Group 2: ", g2)
+    print("Group 3: ", g3)
+    print("Group 4: ", g4)
+    print("Group 5: ", g5)
