@@ -1,6 +1,6 @@
 import random
 print("Enter the names of each student individually")
-//Groups
+'Groups'
 g1 = []
 g2 = []
 g3 = []
@@ -28,5 +28,14 @@ while len(nameList)> 0:
         g5.append(randomPick)
     if tableNumber == 6:
         g6.append(randomPick)
-    classList.remove(randomPick)
+    nameList.remove(randomPick)
     tableNumber = tableNumber + 1
+    if tableNumber == 7:
+        tableNumber = 1
+
+print("Group 1: ", g1)
+print("Group 2: ", g2)
+print("Group 3: ", g3)
+print("Group 4: ", g4)
+print("Group 5: ", g5)
+print("Group 6: ", g6)
