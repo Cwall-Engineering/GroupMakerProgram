@@ -1,12 +1,34 @@
 import random
-desiredGroups = input("How many people do you want in each group? ")
-'Groups'
-desiredGroups = int(desiredGroups)
+nameList = ['Caleb', 'Charles', 'Chad', 'Chip', 'Barry', 'Ben', 'Bart', 'Harry', 'Henry', 'Hugh', 'James', 'Jerry', 'Tom', 'Ted', 'Terry', 'Kenny', 'Karp', 'Wesley', 'Christopher', 'Shaggy']
+while True:
+    desiredGroups = input("How many people do you want in each group? Select 2, 3, or 4: ")
+    try:
+        desiredGroups = int(desiredGroups)
+        if desiredGroups == 2 or desiredGroups == 3 or desiredGroups == 4:
+            break
+        else:
+            print("Invalid input. Please enter only 2, 3, or 4:")
+    except ValueError:
+        print("Invalid input. Please enter only 2, 3, or 4:")
+
 exceptions = input("Are there any students that can't be in the same group? If yes, type 1. If no, type 2. ")
 exceptions = int(exceptions)
+valid1 = False
+valid2 = False
 if exceptions == 1:
-    exception1 = input("Who is the first student?").strip().title()
-    exception2 = input("Who can't work with them?").strip().title()
+    while(valid1 == False):
+        exception1 = input("Who is the first student? ").strip().title()
+        if exception1 in nameList:
+            valid1 = True
+        else:
+            print('\nInvalid entry, please enter the name of a student.')
+    
+    while(valid2 == False):
+        exception2 = input("Who can't work with them? ").strip().title()
+        if exception2 in nameList:
+            valid2 = True
+        else:
+            print('\nInvalid entry, please enter the name of a student.')
     if desiredGroups == 2:
         g1 = []
         g2 = []
@@ -33,8 +55,6 @@ if exceptions == 1:
         g3 = []
         g4 = [exception1]
         g5 = [exception2]
-        
-    nameList = ['Caleb', 'Charles', 'Chad', 'Chip', 'Barry', 'Ben', 'Bart', 'Harry', 'Henry', 'Hugh', 'James', 'Jerry', 'Tom', 'Ted', 'Terry', 'Kenny', 'Karp', 'Wesley', 'Christopher', 'Shaggy']
 
     for exc in (exception1, exception2):
         if exc in nameList:
@@ -236,5 +256,3 @@ elif exceptions == 2:
         print("Group 3: ", g3)
         print("Group 4: ", g4)
         print("Group 5: ", g5)
-else:
-    print("Invalid Input Detected. Restart the code to try again")
