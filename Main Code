@@ -10,9 +10,16 @@ while True:
             print("Invalid input. Please enter only 2, 3, or 4:")
     except ValueError:
         print("Invalid input. Please enter only 2, 3, or 4:")
-
-exceptions = input("Are there any students that can't be in the same group? If yes, type 1. If no, type 2. ")
-exceptions = int(exceptions)
+while True:
+    exceptions = input("Are there any students that can't be in the same group? If yes, type 1. If no, type 2. ")
+    try:        
+        exceptions = int(exceptions)
+        if exceptions == 1 or exceptions == 2:
+            break
+        else:
+            print("Invalid input. Please enter only 1 or 2:")
+    except ValueError:
+        print("Invalid input. Please enter only 1 or 2:")
 valid1 = False
 valid2 = False
 if exceptions == 1:
