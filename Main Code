@@ -1,5 +1,7 @@
 import random
+#List of names used in the program
 nameList = ['Caleb', 'Charles', 'Chad', 'Chip', 'Barry', 'Ben', 'Bart', 'Harry', 'Henry', 'Hugh', 'James', 'Jerry', 'Tom', 'Ted', 'Terry', 'Kenny', 'Karp', 'Wesley', 'Christopher', 'Shaggy']
+#Checks for a valid input for the number of people in each group
 while True:
     desiredGroups = input("How many people do you want in each group? Select 2, 3, or 4: ")
     try:
@@ -10,6 +12,7 @@ while True:
             print("Invalid input. Please enter only 2, 3, or 4:")
     except ValueError:
         print("Invalid input. Please enter only 2, 3, or 4:")
+#Checks for a valid input for whether there are any exceptions to the groupings
 while True:
     exceptions = input("Are there any students that can't be in the same group? If yes, type 1. If no, type 2. ")
     try:        
@@ -20,22 +23,25 @@ while True:
             print("Invalid input. Please enter only 1 or 2:")
     except ValueError:
         print("Invalid input. Please enter only 1 or 2:")
+#Create variables that determine whether the input for the exceptions are valid
 valid1 = False
 valid2 = False
+#Makes sure that each exception is on the name list
 if exceptions == 1:
     while(valid1 == False):
         exception1 = input("Who is the first student? ").strip().title()
         if exception1 in nameList:
             valid1 = True
         else:
-            print('\nInvalid entry, please enter the name of a student.')
+            print('Invalid entry, please enter the name of a student.')
     
     while(valid2 == False):
         exception2 = input("Who can't work with them? ").strip().title()
         if exception2 in nameList:
             valid2 = True
         else:
-            print('\nInvalid entry, please enter the name of a student.')
+            print('Invalid entry, please enter the name of a student.')
+#Creates the tables based on groups of 2
     if desiredGroups == 2:
         g1 = []
         g2 = []
@@ -47,7 +53,7 @@ if exceptions == 1:
         g8 = []
         g9 = [exception1]
         g10 = [exception2]
-
+#Creates the tables based on groups of 3
     if desiredGroups == 3:
         g1 = []
         g2 = []
@@ -55,14 +61,14 @@ if exceptions == 1:
         g4 = []
         g5 = [exception1]
         g6 = [exception2]
-
-    if desiredGroups == 3:
+#Creates the tables based on groups of 4
+    if desiredGroups == 4:
         g1 = []
         g2 = []
         g3 = []
         g4 = [exception1]
         g5 = [exception2]
-
+#Removes the exceptions from the name list so that they aren't randomly placed in the same group
     for exc in (exception1, exception2):
         if exc in nameList:
             nameList.remove(exc)
@@ -70,7 +76,7 @@ if exceptions == 1:
     groupNumber = 1
 
     randomPick = []
-
+#Randomly picks names from the list and groups them based on the previous inputs
     while len(nameList)> 0:
         randomPick = random.choice(nameList)
         if desiredGroups == 2:
@@ -132,6 +138,7 @@ if exceptions == 1:
             groupNumber = groupNumber + 1
             if groupNumber == 6:
                 groupNumber = 1
+#Displays the groups based on the previous inputs
     if desiredGroups == 2:
         print("Group 1: ", g1)
         print("Group 2: ", g2)
@@ -158,6 +165,7 @@ if exceptions == 1:
         print("Group 3: ", g3)
         print("Group 4: ", g4)
         print("Group 5: ", g5)
+#If there are no exceptions, the program is the same as before but without the exceptions
 elif exceptions == 2:
     g1 = []
     g2 = []
